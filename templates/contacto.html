@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Lunarya</title>
+</head>
+<body>
+        <h1>¿Querés vivir una experiencia única de sabor y relajación?<br>
+            ¡Estamos aca para ayudarte a reservar tu momento especial!</h1>
+
+    <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./servicios.html">Servicios</a></li>
+        <li><a href="./habitaciones.html">Habitaciones</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+        <li><a href="./reservar.html">Reservar</a></li>
+    </ul>
+
+    <div>
+        <h2>Contacto</h2>
+        <fieldset>
+            <legend>Formulario de contacto</legend>
+        <form action="procesar_formulario.php" method="POST">
+            <label>Nombre completo</label>
+            <input type="text" name="nombre">
+
+            <label>Correo electrónico</label>
+            <input type="email" name="email">
+
+            <label>Teléfono</label>
+            <input type="tel" name="telefono">
+
+            <label>Mensaje</label>
+            <textarea name="mensaje"></textarea>
+
+            <button type="submit">Enviar mensaje</button>
+        </form>
+        </fieldset>
+</div>
+
+</body>
+</html>
