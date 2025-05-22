@@ -1,13 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAV */
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #9e8f82;
     font-family: sans-serif;
+    padding: 10px 20px;
 }
 
 .logo {
-    height: 150px;
+    height: 100px;
 }
 
 .menu {
@@ -33,10 +41,8 @@ nav {
     left: 0;
     display: none;
     background-color: white;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     list-style: none;
-    padding: 0;
-    margin: 0;
     min-width: 150px;
     z-index: 1000;
 }
@@ -47,4 +53,328 @@ nav {
 
 .submenu:hover ul {
     display: block;
+}
+
+/* SLIDER */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider h1,
+.slider h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f5f5f5;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.slider h1 {
+    top: 20%;
+    font-size: 2.5rem;
+    padding: 20px;
+}
+
+.slider h2 {
+    top: 50%;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.slider ul {
+    display: flex;
+    width: 400%;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* TARJETAS INDEX */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.card {
+    flex: 1 1 300px;
+    margin: 50px 0;
+    max-width: 320px;
+    height: 400px;
+    border-bottom-right-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card .contenido {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .contenido h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.card .contenido p {
+    line-height: 1.5;
+    color: #6a6a6a;
+    flex-grow: 1;
+}
+
+.card .contenido a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #9e8f82;
+    border: 1px solid #9e8f82;
+    border-radius: 4px;
+    transition: all 400ms ease;
+}
+
+.card .contenido a:hover {
+    background: #9e8f82;
+    color: #000;
+}
+
+/* CARTAS GASTRONOMIA */
+.card-servicio {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto 60px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.servicio {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+}
+
+.servicio-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.servicio-contenido {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.servicio-titulo {
+    font-size: 18px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.servicio-text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #f2f2f2;
+    padding: 40px 20px 20px;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-logo,
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo p,
+.footer-section p {
+    font-size: 14px;
+    color: #444;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #777;
+}
+
+/* CLIENTES FELICES */
+.clientes-felices {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    font-family: sans-serif;
+    margin-bottom: 50px;
+}
+
+.clientes-felices h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.testimonios {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial h4 {
+    font-size: 16px;
+    color: #9e8f82;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .slider img {
+        height: 500px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .card-servicio {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .testimonios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial {
+        width: 90%;
+    }
 }
