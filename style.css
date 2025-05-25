@@ -378,3 +378,187 @@ nav {
         width: 90%;
     }
 }
+
+/*-------- spa --------*/
+
+/* HERO SPA */
+.hero-spa {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../imagenes/spa-hero.jpg') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-spa .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero-spa .hero-content p {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* SPA INTRO */
+.spa-intro {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.spa-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #9e8f82;
+    text-transform: uppercase;
+}
+
+.spa-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* SPA SERVICES */
+.spa-services {
+    padding: 60px 0;
+}
+
+.service-category {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.service-category.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-image {
+    flex: 1;
+}
+
+.service-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.service-description {
+    flex: 1;
+}
+
+.service-description h3 {
+    font-size: 2rem;
+    color: #9e8f82;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.service-description ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.service-description ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #9e8f82;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #7a6d62;
+}
+
+/* SPA BENEFITS */
+.spa-benefits {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.spa-benefits h2 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #9e8f82;
+    text-transform: uppercase;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-item h3 {
+    font-size: 1.5rem;
+    color: #9e8f82;
+    margin-bottom: 20px;
+}
+
+.benefit-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-spa {
+        height: 50vh;
+    }
+    
+    .hero-spa .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .service-category,
+    .service-category.reverse {
+        flex-direction: column;
+    }
+    
+    .service-image img {
+        height: 300px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
