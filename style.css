@@ -689,3 +689,318 @@ nav {
     font-size: 1.5rem;
     letter-spacing: 1px;
 }
+
+/*estilo de la pagina contacto*/
+
+/* imagen + titulo */
+.titulo_contacto {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.titulo_contacto h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f5f3f3;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.titulo_contacto h1 {
+    top: 20%;
+    font-size: 2.5rem;
+    padding: 20px;
+}
+.titulo_contacto img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.titulo_contacto  ul {
+    display: flex;
+    width: 400%;
+}
+
+.titulo_contacto  li {
+    width: 100%;
+    list-style: none;
+}
+
+/* formulario de contacto */
+
+.titulo_h2_contacto {
+    text-align: center;
+    
+    margin-bottom: 1%;
+}
+
+#formulario_contacto {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-message {
+  margin: 30px auto;
+  text-align: center;
+  max-width: 100%;
+}
+
+.form-message textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #222;
+}
+
+.error-text {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    padding-top: 5px;
+    color: #ca0000;
+    text-align: left;
+}
+
+/* pagina de agradecimiento - estilo */
+.mensaje {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+.gracias_body {
+    margin: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+/* footer */
+
+
+/* PAGINA DE RESERVA - ESTILO COMPLETO */
+
+/* GENERAL */
+.reservas-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN LAYOUT */
+.reservas-main {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* FORMULARIO IZQUIERDA */
+.buscar_disponibilidad {
+  flex: 1;
+  max-width: 300px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* HABITACIONES CONTENEDOR */
+#rooms {
+  flex: 2;
+  min-width: 600px;
+}
+
+/* CABECERA HABITACIONES */
+#cabecera_habitacion {
+  text-align: center;
+  background-color: #000;
+  color: white;
+  margin-bottom: 1px;
+  padding: 10px 0;
+}
+
+/* HABITACION WRAPPER: imagen + detalle + precio-desayuno */
+#rooms > .habitacion_wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 15px; 
+}
+
+/* IMAGEN HABITACIÓN */
+.habitacion_wrapper .col-imagen img,
+#habitacion_deluxe img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* COLUMNA DETALLE: título + amenities */
+.habitacion_wrapper .col-detalle,
+#habitacion_titulo {
+  flex: 1;
+  position: relative;
+}
+
+/* TÍTULO + DESCRIPCIÓN */
+#habitacion_titulo h3 {
+  margin: 0;
+  font-size: 20px;
+  display: inline-block;
+}
+
+#habitacion_titulo p {
+  margin: 5px 0 0px;
+}
+
+/* ICONO DE DOS PERSONAS */
+#icono_dos_personas {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espacio entre el texto y el ícono */
+  font-size: 14px;
+}
+
+#paradospersonas {
+  margin: 0; /* Elimina márgenes por defecto del <p> */
+}
+
+#icono_dos_personas img {
+  width: 20px;
+  height: 20px;
+}
+
+/* LISTA DE AMENITIES: menor separación */
+.icono_amenities {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.icono_amenities img {
+  width: 16px;
+  height: 16px;
+}
+
+/* PRECIO + DESAYUNO (dentro del wrapper) */
+
+#habitacion_precio_desayuno {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-direction: column;
+}
+
+#habitacion_precio_desayuno > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#habitacion_precio_desayuno img {
+  width: 24px;
+  height: 24px;
+}
+
+#habitacion_precio_desayuno small {
+  display: block;
+  font-size: 0.8em;
+  color: #555;
+  padding-left: 20px;
+}
+
+#habitacion_precio_desayuno p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+/* SELECT DE HABITACIONES */
+.cantidad_de_habitaciones,
+#habitacion_precio_desayuno label {
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* BOTÓN DE RESERVA */
+.boton_reserva {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #006699;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton_reserva:hover {
+  background-color: #004d73;
+}
+
+/* FIN DE ESTILOS */

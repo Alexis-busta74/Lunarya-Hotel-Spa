@@ -1,103 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../style.css" />
     <title>Contacto - Lunarya</title>
-</head>
-<body>
-<header>
-    <nav>
-        <img src="../imagenes/Lunarya.png" alt="Logo hotel" class="logo">
-    <ul class="menu">
-        <li><a href="../index.html">Inicio</a></li>
-    
-        <li class="submenu">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="../imagenes/Lunarya.png" alt="Logo hotel" class="logo" />
+        <ul class="menu">
+          <li><a href="../index.html">Inicio</a></li>
+
+          <li class="submenu">
             <a href="./servicios.html">Servicios</a>
-        <ul>
-            <li><a href="./gastronomia.html">Gastronomía</a></li>
-            <li><a href="./spa.html">Spa</a></li>
+            <ul>
+              <li><a href="./gastronomia.html">Gastronomía</a></li>
+              <li><a href="./spa.html">Spa</a></li>
+            </ul>
+          </li>
+
+          <li class="submenu">
+            <a href="./habitaciones.html">Habitaciones</a>
+            <ul>
+              <li><a href="./deluxe.html">Deluxe</a></li>
+              <li><a href="./juniorSuite.html">Junior Suite</a></li>
+              <li><a href="./executiveSuite.html">Executive Suite</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./reservar.html">Reservar</a></li>
         </ul>
-        </li>
-    
-        <li class="submenu">
-        <a href="./habitaciones.html">Habitaciones</a>
-        <ul>
-            <li><a href="./deluxe.html">Deluxe</a></li>
-            <li><a href="./juniorSuite.html">Junior Suite</a></li>
-            <li><a href="./executiveSuite.html">Executive Suite</a></li>
-        </ul>
-        </li>
-    
-        <li><a href="./contacto.html">Contacto</a></li>
-        <li><a href="./reservar.html">Reservar</a></li>
-    </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
     <main>
-        <h1>Veni a vivir una experiencia unica de sabor y relajacion<br />
-            Contactate con nosotros para mas informacion</h1>
+      <div class="titulo_contacto">
+        <h1>Vení a vivir una experiencia única de sabor y relajación.<br /></h1>
+        <img src="../imagenes/Reception.jpg" alt="imagen de recepcion" />
+      </div>
+      <section>
+        <h2 class="titulo_h2_contacto">
+          Contactate con nosotros para más información.
+        </h2>
+        <fieldset>
+          <form id="formulario_contacto">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required />
+                <div class="error-text" id="nombreError"></div>
+              </div>
+              <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" required />
+                <div class="error-text" id="apellidoError"></div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required />
+                <div class="error-text" id="emailError"></div>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" />
+                <div class="error-text" id="telefonoError"></div>
+              </div>
+            </div>
 
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fechaIngreso">Fecha de ingreso</label>
+                <input type="date" id="fechaIngreso" required />
+                <div class="error-text" id="fechaError"></div>
+              </div>
+              <div class="form-group">
+                <label for="fechaEgreso">Fecha de egreso</label>
+                <input type="date" id="fechaEgreso" required />
+                <div class="error-text" id="fechaErroregreso"></div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="habitacion">Habitación</label>
+                <select id="habitacion" required>
+                  <option value="">Seleccione</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <div class="error-text" id="habitacionError"></div>
+              </div>
+              <div class="form-group">
+                <label for="huesped">Huéspedes</label>
+                <select id="huesped" required>
+                  <option value="">Seleccione</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <div class="error-text" id="huespedError"></div>
+              </div>
+            </div>
+
+            <div class="form-message">
+              <label for="mensaje">Mensaje</label><br />
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                maxlength="300"
+                required
+              ></textarea>
+              <div class="error-text" id="mensajeError"></div>
+            </div>
+            <div class="form-submit">
+              <button type="submit" id="boton">Enviar mensaje</button>
+            <script src="../valida_formulario.js"></script>
+          </form>
+        </fieldset>
+      </section>
+
+      <div>
         <section>
-            <h2>Contacto</h2>
-            <fieldset>
-                <h2>Formulario de contacto</h2>
-                <form action="procesar_formulario.php" method="POST">
-                    <label for="nombre">Nombre completo</label><br />
-                    <input type="text" id="nombre" name="nombre" required /><br /><br />
-
-                    <label for="email">Correo electrónico</label><br />
-                    <input type="email" id="email" name="email" required /><br /><br />
-
-                    <label for="telefono">Teléfono</label><br />
-                    <input type="tel" id="telefono" name="telefono" /><br /><br />
-
-                    <label for="mensaje">Mensaje</label><br />
-                    <textarea id="mensaje" name="mensaje"></textarea><br /><br />
-
-                    <button type="submit">Enviar mensaje</button>
-                </form>
-            </fieldset>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.8676630166015!2d-60.6463939235566!3d-32.954503173590005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab11d0eb49c3%3A0x11f1d3d54f950dd0!2sUniversidad%20Tecnol%C3%B3gica%20Nacional%20%7C%20Facultad%20Regional%20Rosario!5e0!3m2!1ses-419!2sar!4v1747849829692!5m2!1ses-419!2sar"
+            width="100%"
+            height="400"
+            style="border: 0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
         </section>
-
-        <div>
-            <section>
-                <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.8676630166015!2d-60.6463939235566!3d-32.954503173590005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab11d0eb49c3%3A0x11f1d3d54f950dd0!2sUniversidad%20Tecnol%C3%B3gica%20Nacional%20%7C%20Facultad%20Regional%20Rosario!5e0!3m2!1ses-419!2sar!4v1747849829692!5m2!1ses-419!2sar"
-                width="100%"
-                height="400"
-                style="border:0;"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            </section>
-        </div>
+      </div>
     </main>
 
-<footer class="footer">
-    <div class="footer-container">
+    <footer class="footer">
+      <div class="footer-container">
         <div class="footer-section">
-            <img src="../imagenes/Lunarya.png" alt="Lunarya" width="250" />
-            <p>LUNARYA · SPA & HOTEL</p>
+          <img src="../imagenes/Lunarya.png" alt="Lunarya" width="250" />
+          <p>LUNARYA · SPA & HOTEL</p>
         </div>
         <div class="footer-section">
-            <h4>CONTACTO</h4>
-            <p>341 123 4567</p>
-            <p>+54 9 3416-905-123</p>
-            <p>reservas@Lunarya.com.ar</p>
+          <h4>CONTACTO</h4>
+          <p>341 123 4567</p>
+          <p>+54 9 3416-905-123</p>
+          <p>reservas@Lunarya.com.ar</p>
         </div>
         <div class="footer-section">
-            <h4>DIRECCIÓN</h4>
-            <p>Zeballos 1341, Rosario - Argentina</p>
+          <h4>DIRECCIÓN</h4>
+          <p>Zeballos 1341, Rosario - Argentina</p>
         </div>
         <div class="footer-section">
-            <h4>RED SOCIAL</h4>
-            <p>@Lunaryahotek</p>
+          <h4>RED SOCIAL</h4>
+          <p>@Lunaryahotek</p>
         </div>
-    </div>
-</footer>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>
