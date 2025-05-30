@@ -588,8 +588,8 @@ nav {
 }
 
 .habitacion-imagen img {
-    width: 100%;
-    height: 100%;
+    width: 900px;
+    height: 900px;
     object-fit: cover;
     display: block;
 }
@@ -667,28 +667,6 @@ nav {
     }
 }
 
-.hero-habitaciones {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('../imagenes/habitaciones-hero.jpg') center/cover no-repeat;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-.hero-habitaciones .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.hero-habitaciones .hero-content p {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-}
 
 /*estilo de la pagina contacto*/
 
