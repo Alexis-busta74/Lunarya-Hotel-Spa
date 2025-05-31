@@ -40,36 +40,28 @@
     <main class="reservas-main">
       <form id="reserva_formulario">
         <div class="buscar_disponibilidad">
-          <h2>Disponibilidad</h2>
-          <label for="fecha_ingreso">Fecha de ingreso:</label><br />
-          <input
-            type="date"
-            id="fecha_ingreso"
-            name="fecha_ingreso"
-            required
-          /><br /><br />
+          <h2 id="Disponibilidad_fecha">Disponibilidad</h2><br>
+          <label for="fecha_ingreso">Fecha de ingreso:</label><br><br>
+          <input type="date" id="fechaIngreso" required/><br><br>
+          <div class="error-text" id="fechaError"></div>
 
-          <label for="fecha_salida">Fecha de salida:</label><br />
-          <input
-            type="date"
-            id="fecha_salida"
-            name="fecha_salida"
-            required
-          /><br /><br />
-          <button type="submit">Buscar</button>
+          <label for="fecha_salida">Fecha de salida:</label><br><br>
+          <input type="date" id="fechaEgreso" required/><br /><br />
+          <div class="error-text" id="fechaErrorEgreso"></div>
         </div>
+        <script src="../valida_reserva.js"></script>
       </form>
       <div id="rooms">
         <h2 id="cabecera_habitacion">Habitaciones</h2>
 
-        <!-- este div es #rooms > div:first-of-type -->
-        <div class="habitacion_wrapper">
-          <!-- Columna Imagen -->
+       
+        <div class="habitacion_wrapper" id="habitacion_deluxe">
+          
           <div id="habitacion_deluxe">
             <img src="../imagenes/habitacion_deluxe.jpg" alt="…" />
           </div>
 
-          <!-- Columna Título + amenities -->
+         
           <div id="habitacion_titulo">
             <h3>Deluxe Twin</h3>
             <p>Habitación Moderna - 45 mts</p>
@@ -83,13 +75,12 @@
               <p>Para 2 personas.</p>
               <img src="../iconos/dos_personas.ico" alt="2 personas" />
             </div>
+            <div class="hab_desayuno_title"><br>
+              <p>Habitación y desayuno.</p>
+            </div>
           </div>
 
           <div id="habitacion_precio_desayuno">
-            <div>
-              <img src="../iconos/informacion.ico" alt="info desayuno" />
-              <p>Habitación y desayuno</p>
-            </div>
             <div>
               <img src="../iconos/informacion.ico" alt="info precio" />
               <h4>
@@ -98,21 +89,33 @@
               </h4>
             </div>
             <div>
-              <label class="cantidad_de_habitaciones">Habitaciones</label>
-              <select id="habitaciones" required>
+             <label class="cantidad_de_habitaciones">Personas</label>
+              <select id="personas_deluxe"  required>
                 <option value="">Seleccione</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
+              <div class="error-text" id="personaError_deluxe"></div>
+            </div>
+            <div>
+              <label class="cantidad_de_habitaciones">Habitaciones</label>
+              <select  id="habitaciones_deluxe" required>
+                <option value="">Seleccione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="error-text" id="habitacionError_deluxe"></div>
             </div>
           </div>
           <!-- fin precio-desayuno -->
         </div>
         <!-- fin .habitacion_wrapper -->
         <!-- JUNIOR SUITE -->
-        <div class="habitacion_wrapper">
+       <div class="habitacion_wrapper" id="habitacion_junior">
           <div id="habitacion_junior">
             <img src="../imagenes/junior-suite.jpg" alt="…" />
           </div>
@@ -130,36 +133,47 @@
               <p>Para 3 personas.</p>
               <img src="../iconos/icono_3_persona.ico" alt="3 personas" />
             </div>
+             <div class="hab_desayuno_title"><br>
+              <p>Habitación y desayuno.</p>
+            </div>
           </div>
 
           <div id="habitacion_precio_desayuno">
             <div>
-              <img src="../iconos/informacion.ico" alt="info desayuno" />
-              <p>Habitación y desayuno</p>
-            </div>
-            <div>
-              <img src="../iconos/informacion.ico" alt="info precio" />
+               <img src="../iconos/informacion.ico" alt="info precio" />
               <h4>
                 <small>ARS</small>
                 <p>$90.000</p>
               </h4>
             </div>
             <div>
-              <label class="cantidad_de_habitaciones">Habitaciones</label>
-              <select id="habitaciones" required>
+             <label class="cantidad_de_habitaciones">Personas</label>
+              <select id="personas_junior" required>
                 <option value="">Seleccione</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
+              <div class="error-text" id="personaError_junior"></div>
+            </div>
+            <div>
+              <label class="cantidad_de_habitaciones">Habitaciones</label>
+              <select id="habitaciones_junior" required>
+                <option value="">Seleccione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+               <div class="error-text" id="habitacionError_junior"></div>
             </div>
           </div>
         </div>
 
         <!-- EXECUTIVE SUITE -->
-        <div class="habitacion_wrapper">
-          <div id="habitacion_deluxe">
+        <div class="habitacion_wrapper" id="habitacion_executive">
+          <div id="habitacion_executive">
             <img src="../imagenes/executive-suite.jpg" alt="…" />
           </div>
 
@@ -176,13 +190,12 @@
               <p>Para 3 personas.</p>
               <img src="../iconos/icono_3_persona.ico" alt="3 personas" />
             </div>
+              <div class="hab_desayuno_title"><br>
+              <p>Habitación y desayuno.</p>
+            </div>
           </div>
 
           <div id="habitacion_precio_desayuno">
-            <div>
-              <img src="../iconos/informacion.ico" alt="info desayuno" />
-              <p>Habitación y desayuno</p>
-            </div>
             <div>
               <img src="../iconos/informacion.ico" alt="info precio" />
               <h4>
@@ -191,39 +204,63 @@
               </h4>
             </div>
             <div>
-              <label class="cantidad_de_habitaciones">Habitaciones</label>
-              <select id="habitaciones" required>
+             <label class="cantidad_de_habitaciones">Personas</label>
+              <select id="personas_executive" required>
                 <option value="">Seleccione</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
+              <div class="error-text" id="personaError_executive"></div>
+            </div>
+            <div>
+              <label class="cantidad_de_habitaciones">Habitaciones</label>
+              <select id="habitaciones_executive" required>
+                <option value="">Seleccione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="error-text" id="habitacionError_executive"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="formulario_datos_personales">
-        <h4>Complete sus datos</h4>
-        <form id="form_datos_reserva">
-          <label for="reserva_nombre">Nombre:</label>
-          <input type="text" id="reserva_nombre" name="reserva_nombre"required/>
+     <div class="formulario_datos_personales">
+  <h4 id="titulo_reserva_formulario">Complete sus datos</h4>
+  <form id="form_datos_reserva">
+    <div>
+      <label for="reserva_nombre">Nombre:</label>
+      <input type="text" id="reserva_nombre" name="reserva_nombre" required />
+      <div class="error-text" id="nombreError"></div>
+    </div>
 
-          <label for="reserva_apellido">Apellido:</label>
-          <input type="text" id="reserva_apellido"name="reserva_apellido" required/>
+    <div>
+      <label for="reserva_apellido">Apellido:</label>
+      <input type="text" id="reserva_apellido" name="reserva_apellido" required />
+      <div class="error-text" id="apellidoError"></div>
+    </div>
 
-          <label for="reserva_correo">Correo electrónico:</label>
-          <input type="email" id="reserva_correo"name="reserva_correo"required/>
+    <div>
+      <label for="reserva_correo">Correo electrónico:</label>
+      <input type="email" id="reserva_correo" name="reserva_correo" required />
+      <div class="error-text" id="emailError"></div>
+    </div>
 
-          <label for="reserva_telefono">Número de teléfono:</label>
-          <input type="tel"id="reserva_telefono"name="reserva_telefono"required/>
-        </form>
-        <span class="boton_reserva"> Reservar</span>
-        <!-- <h5>Seleccione al menos una habitación.</h5> -->
-        </div>
+    <div>
+      <label for="reserva_telefono">Número de teléfono:</label>
+      <input type="tel" id="reserva_telefono" name="reserva_telefono" required />
+      <div class="error-text" id="telefonoError"></div>
+    </div>
+
+    <button type="submit" id="boton_reserva" class="boton_reserva">Reservar</button>
+  </form>
+</div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="footer_reserva">
       <div class="footer-container">
         <div class="footer-section">
           <img src="../imagenes/Lunarya.png" alt="Lunarya" width="250" />

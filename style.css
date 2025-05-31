@@ -782,7 +782,9 @@ button[type="submit"]:hover {
 /* footer */
 
 
-/* PAGINA DE RESERVA - ESTILO COMPLETO */
+/* ================================
+   PAGINA DE RESERVA - CSS COMPLETO
+   ================================ */
 
 /* GENERAL */
 .reservas-body {
@@ -792,108 +794,128 @@ button[type="submit"]:hover {
   box-sizing: border-box;
 }
 
-/* MAIN LAYOUT */
+/* MAIN */
 .reservas-main {
   display: flex;
-  align-items: flex-start;
-  gap: 30px;
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
 }
 
-/* FORMULARIO IZQUIERDA */
-.buscar_disponibilidad {
-  flex: 1;
-  max-width: 300px;
-  background-color: #f5f5f5;
+/* FORMULARIO DE BÚSQUEDA (IZQUIERDA) */
+#Disponibilidad_fecha{
+  text-align: center;
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+#reserva_formulario {
+  border: 2px solid #ccc;
   padding: 20px;
   border-radius: 8px;
+  background-color: #f5f5f5;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+#reserva_formulario input {
+  width: 80%;
+  height: 40px;
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
-/* HABITACIONES CONTENEDOR */
+/* CONTENEDOR DE HABITACIONES */
 #rooms {
-  flex: 2;
-  min-width: 600px;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* CABECERA HABITACIONES */
+/* Cabecera “Habitaciones” */
 #cabecera_habitacion {
   text-align: center;
   background-color: #000;
   color: white;
   margin-bottom: 1px;
   padding: 10px 0;
+  border-radius: 5px;
 }
 
-/* HABITACION WRAPPER: imagen + detalle + precio-desayuno */
-#rooms > .habitacion_wrapper {
+/* Wrapper de cada habitación */
+.habitacion_wrapper {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   align-items: flex-start;
-  flex-wrap: wrap;
   margin-top: 20px;
   border: 2px solid #ccc;
   border-radius: 5px;
-  padding: 15px; 
+  padding: 15px;
+  box-sizing: border-box;
 }
 
-/* IMAGEN HABITACIÓN */
-.habitacion_wrapper .col-imagen img,
-#habitacion_deluxe img {
-  width: 250px;
-  height: 250px;
-  border-radius: 8px;
-  display: block;
-}
-#habitacion_junior img{
-  width: 250px;
-  height: 250px;
-  border-radius: 8px;
+/* Imagen de habitación */
+.habitacion_wrapper img {
+  width: 250px;          
+  height: 250px;         
+  object-fit: cover;     
+  border-radius: 8px;  
   display: block;
 }
 
-/* COLUMNA DETALLE: título + amenities */
+/* Columna de detalles (título + amenities) */
 .habitacion_wrapper .col-detalle,
 #habitacion_titulo {
   flex: 1;
   position: relative;
 }
 
-/* TÍTULO + DESCRIPCIÓN */
+/* Título y descripción */
 #habitacion_titulo h3 {
   margin: 0;
-  font-size: 20px;
-  display: inline-block;
+  font-size: 1.25rem;
 }
 
 #habitacion_titulo p {
-  margin: 5px 0 0px;
+  margin: 5px 0 0;
 }
 
-/* ICONO DE DOS PERSONAS */
-.icono_dos_personas {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-.icono_dos_personas img {
-  width: 20px;
-  height: 20px;
-}
+/* Icono “Para 2 personas” / “Para 3 personas” */
+.icono_dos_personas,
 .icono_tres_personas {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-top: 8px;
 }
-.icono_tres_personas img{
-  width: 22px;
+
+.icono_dos_personas img,
+.icono_tres_personas img {
+  width: 20px;
   height: 20px;
 }
-/* LISTA DE AMENITIES: menor separación */
+
+/* Habitación y desayuno */
+.hab_desayuno_title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.875rem;
+  margin-top: 8px;
+}
+
+.hab_desayuno_title img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Lista de amenities */
 .icono_amenities {
   display: flex;
   gap: 5px;
@@ -907,19 +929,18 @@ button[type="submit"]:hover {
   height: 16px;
 }
 
-/* PRECIO + DESAYUNO (dentro del wrapper) */
-
+/* Precio + Desayuno + Personas + Habitaciones */
 #habitacion_precio_desayuno {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
 }
 
 #habitacion_precio_desayuno > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -929,10 +950,8 @@ button[type="submit"]:hover {
 }
 
 #habitacion_precio_desayuno small {
-  display: block;
   font-size: 0.8em;
   color: #555;
-  padding-left: 20px;
 }
 
 #habitacion_precio_desayuno p {
@@ -940,37 +959,38 @@ button[type="submit"]:hover {
   font-size: 1.2em;
 }
 
-/* SELECT DE HABITACIONES */
+/* Etiquetas y selects */
 .cantidad_de_habitaciones,
+.cantidad_de_personas,
 #habitacion_precio_desayuno label {
   font-weight: bold;
-  margin-bottom: 1px;
+  margin-bottom: 5px;
 }
 
 select {
   padding: 5px;
   border-radius: 5px;
+  width: 100%;
 }
 
-/*RESERVA FORMULARIO + BOTON*/
-
+/* FORMULARIO DE DATOS PERSONALES */
+#titulo_reserva_formulario{
+  text-align: center;
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
 .formulario_datos_personales {
   background-color: #f9f9f9;
   border: 2px solid #ccc;
   border-radius: 10px;
   padding: 20px;
-  width: 320px;
-  margin: 20px auto 20px auto;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-@media (min-width: 768px) {
-  .formulario_datos_personales {
-    float: right;
-    margin-right: 40px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+  box-sizing: border-box;
 }
 
 .formulario_datos_personales h4 {
@@ -993,8 +1013,7 @@ select {
   box-sizing: border-box;
 }
 
-/* BOTÓN DE RESERVA */
-
+/* Botón de reserva */
 .boton_reserva {
   display: inline-block;
   margin-top: 20px;
@@ -1009,8 +1028,78 @@ select {
   background-color: #004d73;
 }
 
+/* FOOTER RESERVA */
+#footer_reserva {
+  background-color: #9e8f82;
+  padding: 20px;
+  color: white;
+}
 
+@media (min-width: 768px) {
+  /* Contenedor principal: apilar en fila */
+  .reservas-main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
+  /* Formulario de búsqueda y datos personales ocupan columnas fijas */
+  #reserva_formulario {
+    width: 30%;
+  }
+
+  #rooms {
+    width: 40%;
+  }
+
+  .formulario_datos_personales {
+    width: 30%;
+    margin: 0; 
+  }
+
+  /* Cada habitación: pasar a diseño en fila */
+  .habitacion_wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Alinear el bloque de precio/desayuno al centro vertical */
+  #habitacion_precio_desayuno {
+    align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Mantener filas y repartir espacio */
+  .reservas-main {
+    justify-content: space-between;
+  }
+
+  /* Ajusta ancho para que entren 3 columnas*/
+  #reserva_formulario {
+    width: 25%;
+  }
+
+  #rooms {
+    width: 50%;
+  }
+
+  .formulario_datos_personales {
+    width: 20%;
+    margin: 0; 
+  }
+
+  /* Dentro de cada habitación, ampliar la imagen y detalles un poco */
+  .habitacion_wrapper .col-imagen img,
+  #habitacion_deluxe img,
+  #habitacion_junior img,
+  #habitacion_executive img {
+    max-width: 300px;
+  }
+
+  #habitacion_titulo h3 {
+    font-size: 1.5rem;
+  }
+}
 
 
 /* FIN DE ESTILOS */

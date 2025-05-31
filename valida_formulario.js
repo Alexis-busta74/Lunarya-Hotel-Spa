@@ -22,41 +22,49 @@ function validarnombre(){
     const error_texto = document.getElementById('nombreError');
     if (nombre === ''){
         error_texto.textContent = '❌ El campo no puede estar vacío. ';
-    }else if (!/^[a-zA-Z-áéíóúÁÉÍÓÚ\s]+$/.test(nombre)){
+        return false;
+    } else if (!/^[a-zA-Z-áéíóúÁÉÍÓÚ\s]+$/.test(nombre)){
         error_texto.textContent = '❌ Solo se permiten letras y espacios.';
-    }else if (nombre.length < 3 || nombre.length > 30){
-        error_texto.textContent = '❌ Minimo 3 caracteres, maximo 30 caracteres.'
-    }
-    else{
+        return false;
+    } else if (nombre.length < 3 || nombre.length > 30){
+        error_texto.textContent = '❌ Minimo 3 caracteres, maximo 30 caracteres.';
+        return false;
+    } else {
         error_texto.textContent = '✅';  
+        return true;
     }
 }
-
-function validarapellido(){
+function validarapellido() {
     const apellido = document.getElementById('apellido').value.trim();
     const error_texto = document.getElementById('apellidoError');
-    if (apellido === ''){
-        error_texto.textContent = '❌ El campo no puede estar vacío. ';
-    }else if (!/^[a-zA-Z-áéíóúÁÉÍÓÚ\s]+$/.test(apellido)){
+
+    if (apellido === '') {
+        error_texto.textContent = '❌ El campo no puede estar vacío.';
+        return false;
+    } else if (!/^[a-zA-Z-áéíóúÁÉÍÓÚ\s]+$/.test(apellido)) {
         error_texto.textContent = '❌ Solo se permiten letras y espacios.';
-    }else if (apellido.length < 2 || apellido.length > 30){
-        error_texto.textContent = '❌ Minimo 2 caracteres, maximo 30 caracteres.'
-    }
-    else{
-        error_texto.textContent = '✅';  
+        return false;
+    } else if (apellido.length < 2 || apellido.length > 30) {
+        error_texto.textContent = '❌ Mínimo 2 caracteres, máximo 30 caracteres.';
+        return false;
+    } else {
+        error_texto.textContent = '✅';
+        return true;
     }
 }
-
 function validarmail(){
     const mail = document.getElementById('email').value.trim();
     const error = document.getElementById('emailError');
 
     if (mail === ''){
         error.textContent = '❌ El campo no puede estar vacío';
+         return false;
     } else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){
         error.textContent = '❌ Formato no válido. Ej: nombre@dominio.com';
+        return false;
     } else {
         error.textContent = '✅';
+       return true;
     }
 }
 
@@ -67,74 +75,18 @@ function validatelefono() {
     if (telefono === '') {
         error.textContent = '';
         return;
+         return true;
     }
 
     if(!/^[0-9]+$/.test(telefono)){
         error.textContent = '❌ Solo se permiten números.';
+         return false;
     } else if(telefono.length < 10 || telefono.length > 15 ) {
         error.textContent = '❌ Número inválido. Mínimo 10 dígitos, maximo 15.';
+         return false;
     } else {
         error.textContent = '✅';
-    }
-}
-
-function validarFechaIngreso() {
-  const fechaInput = document.getElementById('fechaIngreso');
-  const error = document.getElementById('fechaError');
-
-  const hoy = new Date();
-  const hoyStr = hoy.toISOString().split('T')[0];
-  const seleccionadaStr = fechaInput.value;
-  
-  if (seleccionadaStr < hoyStr) {
-    error.textContent = '❌ La fecha no puede ser anterior a hoy.';
-  } else {
-    error.textContent = '✅ Fecha válida';
-  }
-}
-
-function validarFechaEgreso() {
-  const fechaInput = document.getElementById('fechaEgreso');
-  const error = document.getElementById('fechaErroregreso');
-
-  const hoy = new Date();
-  const manana = new Date(hoy);
-  manana.setDate(hoy.getDate() + 1);
-
-  const maxFecha = new Date(hoy);
-  maxFecha.setDate(hoy.getDate() + 365);
-
-  // Formateo a yyyy-mm-dd
-  const formatFecha = (date) => date.toISOString().split('T')[0];
-  const mananaStr = formatFecha(manana);
-  const maxFechaStr = formatFecha(maxFecha);
-
-  const valor = fechaInput.value;
-
-  if (valor < mananaStr || valor > maxFechaStr) {
-    error.textContent = '❌ La fecha debe estar entre mañana y 365 días desde hoy.';
-  } else {
-    error.textContent = '✅ Fecha válida';
-  }
-}
-function validarHabitacion() {
-  const habitacionSelect = document.getElementById('habitacion');
-  const error = document.getElementById('habitacionError');
-
-    if (habitacionSelect.value === "") {
-      error.textContent = '❌ Debe seleccionar una opción.';
-    } else {
-      error.textContent = '✅ Opción válida';
-    }
-}
-
-function validarhuesped() {
-  const huespedSelect = document.getElementById('huesped');
-  const error = document.getElementById('huespedError');
-    if (huespedSelect.value === "") {
-      error.textContent = '❌ Debe seleccionar una opción.';
-    } else {
-      error.textContent = '✅ Opción válida';
+         return true;
     }
 }
 
@@ -142,18 +94,16 @@ function validamensajetexto(){
     const mensaje = document.getElementById('mensaje').value.trim();
     const error = document.getElementById('mensajeError');
 
-    if(mensaje === ''){
-        error.textContent = '';
-        return;
-    }
-    
     if(mensaje.length < 20) {
         error.textContent = '❌ El mensaje debe tener al menos 20 caracteres.';
+        return false;
     } else if(mensaje.length > 300){
         error.textContent = '❌ Llego al maximo de caracteres.';
+        return false;
     }
     else {
         error.textContent = '✅';
+        return true;
     }
 }
 
@@ -168,15 +118,12 @@ document.addEventListener('DOMContentLoaded', function () {
     validarnombre();
     validarapellido();
     validarmail();
-    validarHabitacion();
-    validarhuesped(); 
     validatelefono();
     validamensajetexto();
-    validarFechaEgreso();
-    validarFechaIngreso();
+  
 
     // Verificar errores
-    const errores = document.querySelectorAll('.error-text');
+    const errores = document.querySelectorAll('div[id$="Error"]');
     let hayErrores = false;
 
     errores.forEach(error => {
