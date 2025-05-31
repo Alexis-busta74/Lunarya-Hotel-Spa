@@ -60,63 +60,167 @@
         </div>
       </form>
       <div id="rooms">
-  <h2 id="cabecera_habitacion">Habitaciones</h2>
+        <h2 id="cabecera_habitacion">Habitaciones</h2>
 
-  <!-- este div es #rooms > div:first-of-type -->
-  <div class="habitacion_wrapper">
-    <!-- Columna Imagen -->
-    <div id="habitacion_deluxe">
-      <img src="../imagenes/habitacion_deluxe.jpg" alt="…" />
-    </div>
+        <!-- este div es #rooms > div:first-of-type -->
+        <div class="habitacion_wrapper">
+          <!-- Columna Imagen -->
+          <div id="habitacion_deluxe">
+            <img src="../imagenes/habitacion_deluxe.jpg" alt="…" />
+          </div>
 
-    <!-- Columna Título + amenities -->
-    <div id="habitacion_titulo">
-      <h3>Deluxe Twin</h3>
-      <p>Habitación Moderna - 45 mts</p>
-      <span id="icono_dos_personas">
-        <p id="paradospersonas"> Para 2 personas.</p>
-        <img src="../iconos/dos_personas.ico" alt="2 personas" />
-      </span>
-      <ul class="icono_amenities">
-        <li><img src="../iconos/televisor.ico" alt="televisor" /></li>
-        <li><img src="../iconos/wifi.ico" alt="wifi" /></li>
-        <li><img src="../iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
-        <li><img src="../iconos/aire_acondicionado.ico" alt="aire" /></li>
-      </ul>
-    </div>
+          <!-- Columna Título + amenities -->
+          <div id="habitacion_titulo">
+            <h3>Deluxe Twin</h3>
+            <p>Habitación Moderna - 45 mts</p>
+            <ul class="icono_amenities">
+              <li><img src="../iconos/televisor.ico" alt="televisor" /></li>
+              <li><img src="../iconos/wifi.ico" alt="wifi" /></li>
+              <li><img src="../iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
+              <li><img src="../iconos/aire_acondicionado.ico" alt="aire" /></li>
+            </ul>
+            <div class="icono_dos_personas">
+              <p>Para 2 personas.</p>
+              <img src="../iconos/dos_personas.ico" alt="2 personas" />
+            </div>
+          </div>
 
-    
-    <div id="habitacion_precio_desayuno">
-      <div>
-        <img src="../iconos/informacion.ico" alt="info desayuno" />
-        <p>Habitación y desayuno</p>
+          <div id="habitacion_precio_desayuno">
+            <div>
+              <img src="../iconos/informacion.ico" alt="info desayuno" />
+              <p>Habitación y desayuno</p>
+            </div>
+            <div>
+              <img src="../iconos/informacion.ico" alt="info precio" />
+              <h4>
+                <small>ARS</small>
+                <p>$80.000</p>
+              </h4>
+            </div>
+            <div>
+              <label class="cantidad_de_habitaciones">Habitaciones</label>
+              <select id="habitaciones" required>
+                <option value="">Seleccione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+          <!-- fin precio-desayuno -->
+        </div>
+        <!-- fin .habitacion_wrapper -->
+        <!-- JUNIOR SUITE -->
+        <div class="habitacion_wrapper">
+          <div id="habitacion_junior">
+            <img src="../imagenes/junior-suite.jpg" alt="…" />
+          </div>
+
+          <div id="habitacion_titulo">
+            <h3>Junior Suite</h3>
+            <p>Habitación Moderna - 65 mts</p>
+            <ul class="icono_amenities">
+              <li><img src="../iconos/televisor.ico" alt="televisor" /></li>
+              <li><img src="../iconos/wifi.ico" alt="wifi" /></li>
+              <li><img src="../iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
+              <li><img src="../iconos/aire_acondicionado.ico" alt="aire" /></li>
+            </ul>
+            <div class="icono_tres_personas">
+              <p>Para 3 personas.</p>
+              <img src="../iconos/icono_3_persona.ico" alt="3 personas" />
+            </div>
+          </div>
+
+          <div id="habitacion_precio_desayuno">
+            <div>
+              <img src="../iconos/informacion.ico" alt="info desayuno" />
+              <p>Habitación y desayuno</p>
+            </div>
+            <div>
+              <img src="../iconos/informacion.ico" alt="info precio" />
+              <h4>
+                <small>ARS</small>
+                <p>$90.000</p>
+              </h4>
+            </div>
+            <div>
+              <label class="cantidad_de_habitaciones">Habitaciones</label>
+              <select id="habitaciones" required>
+                <option value="">Seleccione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXECUTIVE SUITE -->
+        <div class="habitacion_wrapper">
+          <div id="habitacion_deluxe">
+            <img src="../imagenes/executive-suite.jpg" alt="…" />
+          </div>
+
+          <div id="habitacion_titulo">
+            <h3>Executive Suite</h3>
+            <p>Habitación Moderna - 85 mts</p>
+            <ul class="icono_amenities">
+              <li><img src="../iconos/televisor.ico" alt="televisor" /></li>
+              <li><img src="../iconos/wifi.ico" alt="wifi" /></li>
+              <li><img src="../iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
+              <li><img src="../iconos/aire_acondicionado.ico" alt="aire" /></li>
+            </ul>
+            <div class="icono_dos_personas">
+              <p>Para 3 personas.</p>
+              <img src="../iconos/icono_3_persona.ico" alt="3 personas" />
+            </div>
+          </div>
+
+          <div id="habitacion_precio_desayuno">
+            <div>
+              <img src="../iconos/informacion.ico" alt="info desayuno" />
+              <p>Habitación y desayuno</p>
+            </div>
+            <div>
+              <img src="../iconos/informacion.ico" alt="info precio" />
+              <h4>
+                <small>ARS</small>
+                <p>$110.000</p>
+              </h4>
+            </div>
+            <div>
+              <label class="cantidad_de_habitaciones">Habitaciones</label>
+              <select id="habitaciones" required>
+                <option value="">Seleccione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="../iconos/informacion.ico" alt="info precio" />
-        <h4>
-          <small>ARS</small>
-          <p>$80.000</p>
-        </h4>
-      </div>
-      <div>
-        <label class="cantidad_de_habitaciones">Habitaciones</label>
-        <select id="habitaciones" required>
-          <option value="">Seleccione</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-      </div>
-    </div>
-    <!-- fin precio-desayuno -->
+      <div class="formulario_datos_personales">
+        <h4>Complete sus datos</h4>
+        <form id="form_datos_reserva">
+          <label for="reserva_nombre">Nombre:</label>
+          <input type="text" id="reserva_nombre" name="reserva_nombre"required/>
 
-  </div>  <!-- fin .habitacion_wrapper -->
-</div>
-      <div>
-        <h5>Seleccione al menos una habitación.</h5>
+          <label for="reserva_apellido">Apellido:</label>
+          <input type="text" id="reserva_apellido"name="reserva_apellido" required/>
+
+          <label for="reserva_correo">Correo electrónico:</label>
+          <input type="email" id="reserva_correo"name="reserva_correo"required/>
+
+          <label for="reserva_telefono">Número de teléfono:</label>
+          <input type="tel"id="reserva_telefono"name="reserva_telefono"required/>
+        </form>
         <span class="boton_reserva"> Reservar</span>
-      </div>
+        <!-- <h5>Seleccione al menos una habitación.</h5> -->
+        </div>
     </main>
 
     <footer class="footer">
@@ -143,4 +247,3 @@
     </footer>
   </body>
 </html>
-

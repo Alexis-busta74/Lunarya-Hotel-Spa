@@ -795,9 +795,9 @@ button[type="submit"]:hover {
 /* MAIN LAYOUT */
 .reservas-main {
   display: flex;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 30px;
   padding: 20px;
-  flex-wrap: wrap;
 }
 
 /* FORMULARIO IZQUIERDA */
@@ -840,7 +840,13 @@ button[type="submit"]:hover {
 .habitacion_wrapper .col-imagen img,
 #habitacion_deluxe img {
   width: 250px;
-  height: auto;
+  height: 250px;
+  border-radius: 8px;
+  display: block;
+}
+#habitacion_junior img{
+  width: 250px;
+  height: 250px;
   border-radius: 8px;
   display: block;
 }
@@ -864,25 +870,29 @@ button[type="submit"]:hover {
 }
 
 /* ICONO DE DOS PERSONAS */
-#icono_dos_personas {
-  position: absolute;
-  top: 0;
-  right: 30px;
+.icono_dos_personas {
   display: flex;
   align-items: center;
-  gap: 5px; /* Espacio entre el texto y el ícono */
+  gap: 5px;
   font-size: 14px;
+  margin-top: 8px;
 }
 
-#paradospersonas {
-  margin: 0; /* Elimina márgenes por defecto del <p> */
-}
-
-#icono_dos_personas img {
+.icono_dos_personas img {
   width: 20px;
   height: 20px;
 }
-
+.icono_tres_personas {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.icono_tres_personas img{
+  width: 22px;
+  height: 20px;
+}
 /* LISTA DE AMENITIES: menor separación */
 .icono_amenities {
   display: flex;
@@ -942,7 +952,49 @@ select {
   border-radius: 5px;
 }
 
+/*RESERVA FORMULARIO + BOTON*/
+
+.formulario_datos_personales {
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 320px;
+  margin: 20px auto 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .formulario_datos_personales {
+    float: right;
+    margin-right: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.formulario_datos_personales h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.formulario_datos_personales label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formulario_datos_personales input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
 /* BOTÓN DE RESERVA */
+
 .boton_reserva {
   display: inline-block;
   margin-top: 20px;
@@ -956,5 +1008,9 @@ select {
 .boton_reserva:hover {
   background-color: #004d73;
 }
+
+
+
+
 
 /* FIN DE ESTILOS */
