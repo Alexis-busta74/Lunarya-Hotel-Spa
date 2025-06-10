@@ -1,133 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../style.css" />
-    <title>Contacto - Lunarya</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <img src="../imagenes/Lunarya.png" alt="Logo hotel" class="logo" />
-        <ul class="menu">
-          <li><a href="../index.html">Inicio</a></li>
+{% extends "base.html" %}
+{% block title %}Contacto - Lunarya{% endblock %}
 
-          <li class="submenu">
-            <a href="./servicios.html">Servicios</a>
-            <ul>
-              <li><a href="./gastronomia.html">Gastronomía</a></li>
-              <li><a href="./spa.html">Spa</a></li>
-            </ul>
-          </li>
+{% block content %}
+<main>
+  <div class="titulo_contacto">
+    <h1>Vení a vivir una experiencia única de sabor y relajación.</h1>
+    <img src="{{ url_for('static', filename='imagenes/Reception.jpg') }}" alt="imagen de recepcion" />
+  </div>
 
-          <li class="submenu">
-            <a href="./habitaciones.html">Habitaciones</a>
-            <ul>
-              <li><a href="./habitaciones.html">Deluxe</a></li>
-              <li><a href="./habitaciones.html">Junior Suite</a></li>
-              <li><a href="./habitaciones.html">Executive Suite</a></li>
-            </ul>
-          </li>
-
-          <li><a href="./contacto.html">Contacto</a></li>
-          <li><a href="./reservar.html">Reservar</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="titulo_contacto">
-        <h1>Vení a vivir una experiencia única de sabor y relajación.<br /></h1>
-        <img src="../imagenes/Reception.jpg" alt="imagen de recepcion" />
-      </div>
-      <section>
-        <h2 class="titulo_h2_contacto">
-          Contactate con nosotros para más información.
-        </h2>
-        <fieldset>
-          <form id="formulario_contacto">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" required />
-                <div class="error-text" id="nombreError"></div>
-              </div>
-              <div class="form-group">
-                <label for="apellido">Apellido</label>
-                <input type="text" id="apellido" name="apellido" required />
-                <div class="error-text" id="apellidoError"></div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" required />
-                <div class="error-text" id="emailError"></div>
-              </div>
-              <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" />
-                <div class="error-text" id="telefonoError"></div>
-              </div>
-            </div>
-            <div class="form-message">
-              <label for="mensaje">Mensaje</label><br />
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                rows="5"
-                maxlength="300"
-                required
-              ></textarea>
-              <div class="error-text" id="mensajeError"></div>
-            </div>
-            <div class="form-submit">
-              <button type="submit" id="boton">Enviar mensaje</button>
-            </div>
-          <!-- CIERRE DEL FORMULARIO -->
-          <script src="../valida_formulario.js"></script>
-          </form>
-        </fieldset>
-      </section>
-
-      <div>
-        <section>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.8676630166015!2d-60.6463939235566!3d-32.954503173590005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab11d0eb49c3%3A0x11f1d3d54f950dd0!2sUniversidad%20Tecnol%C3%B3gica%20Nacional%20%7C%20Facultad%20Regional%20Rosario!5e0!3m2!1ses-419!2sar!4v1747849829692!5m2!1ses-419!2sar"
-            width="100%"
-            height="400"
-            style="border: 0"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
-        </section>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-section">
-          <img src="../imagenes/Lunarya.png" alt="Lunarya" width="250" />
-          <p>LUNARYA · SPA & HOTEL</p>
+  <section>
+    <h2 class="titulo_h2_contacto">Contactate con nosotros para más información.</h2>
+    <fieldset>
+      <form method="POST" id="formulario_contacto">
+        {{ form.hidden_tag() }}
+        
+        <div class="form-row">
+          <div class="form-group">
+            {{ form.nombre.label }} {{ form.nombre(class="input") }}
+            {% for error in form.nombre.errors %}
+              <div class="error-text">{{ error }}</div>
+            {% endfor %}
+          </div>
+          <div class="form-group">
+            {{ form.apellido.label }} {{ form.apellido(class="input") }}
+            {% for error in form.apellido.errors %}
+              <div class="error-text">{{ error }}</div>
+            {% endfor %}
+          </div>
         </div>
-        <div class="footer-section">
-          <h4>CONTACTO</h4>
-          <p>341 123 4567</p>
-          <p>+54 9 3416-905-123</p>
-          <p>reservas@Lunarya.com.ar</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            {{ form.email.label }} {{ form.email(class="input") }}
+            {% for error in form.email.errors %}
+              <div class="error-text">{{ error }}</div>
+            {% endfor %}
+          </div>
+          <div class="form-group">
+            {{ form.telefono.label }} {{ form.telefono(class="input") }}
+            {% for error in form.telefono.errors %}
+              <div class="error-text">{{ error }}</div>
+            {% endfor %}
+          </div>
         </div>
-        <div class="footer-section">
-          <h4>DIRECCIÓN</h4>
-          <p>Zeballos 1341, Rosario - Argentina</p>
+
+        <div class="form-message">
+          {{ form.mensaje.label }}<br />
+          {{ form.mensaje(class="textarea") }}
+          {% for error in form.mensaje.errors %}
+            <div class="error-text">{{ error }}</div>
+          {% endfor %}
         </div>
-        <div class="footer-section">
-          <h4>RED SOCIAL</h4>
-          <p>@Lunaryahotek</p>
+
+        <div class="form-submit">
+          {{ form.submit(class="submit-button") }}
         </div>
-      </div>
-    </footer>
-  </body>
-</html>
+      </form>
+    </fieldset>
+  </section>
+
+  <section>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.8676630166015!2d-60.6463939235566!3d-32.954503173590005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab11d0eb49c3%3A0x11f1d3d54f950dd0!2sUniversidad%20Tecnol%C3%B3gica%20Nacional%20%7C%20Facultad%20Regional%20Rosario!5e0!3m2!1ses-419!2sar!4v1747849829692!5m2!1ses-419!2sar"
+      width="100%" height="400" style="border: 0" allowfullscreen loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+</main>
+{% endblock %}
