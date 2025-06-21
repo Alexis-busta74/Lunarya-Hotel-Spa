@@ -25,11 +25,50 @@ document.addEventListener('DOMContentLoaded', function () {
     const esSeleccionHabitacionesValida = validarHabitaciones();
 
     if (esNombreValido && esApellidoValido && esMailValido && esTelefonoValido && esFechaIngresoValida && esFechaEgresoValida && esSeleccionHabitacionesValida) {
-        form.reset();
-      window.location.href ="mensaje_reserva.html";
+  const datos = {
+    nombre: document.getElementById('reserva_nombre').value.trim(),
+    apellido: document.getElementById('reserva_apellido').value.trim(),
+    email: document.getElementById('reserva_correo').value.trim(),
+    telefono: document.getElementById('reserva_telefono').value.trim(),
+    fecha_ingreso: document.getElementById('fechaIngreso').value,
+    fecha_egreso: document.getElementById('fechaEgreso').value,
+    habitaciones: JSON.stringify({
+      deluxe: {
+        personas: document.getElementById('personas_deluxe').value,
+        habitaciones: document.getElementById('habitaciones_deluxe').value
+      },
+      junior: {
+        personas: document.getElementById('personas_junior').value,
+        habitaciones: document.getElementById('habitaciones_junior').value
+      },
+      executive: {
+        personas: document.getElementById('personas_executive').value,
+        habitaciones: document.getElementById('habitaciones_executive').value
+      }
+    })
+  };
+
+  // Enviar al backend
+  fetch('http://127.0.0.1:5000/api/reserva', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(datos)
+  })
+  .then(response => {
+    if (response.ok) {
+      form.reset();
+      window.location.href = "/mensaje_reserva";
     } else {
-      alert("Hay errores en el formulario. Por favor, corríjalos.");
+      alert("Hubo un error al enviar la reserva.");
     }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert("No se pudo conectar con el servidor.");
+  });
+}
   });
 });
 

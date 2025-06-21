@@ -1,0 +1,1105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #9e8f82;
+    font-family: sans-serif;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 100px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    display: block;
+}
+
+.menu li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.menu li ul li a {
+    padding: 10px;
+}
+
+.submenu:hover ul {
+    display: block;
+}
+
+/* SLIDER */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider h1,
+.slider h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f5f5f5;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.slider h1 {
+    top: 20%;
+    font-size: 2.5rem;
+    padding: 20px;
+}
+
+.slider h2 {
+    top: 50%;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.slider ul {
+    display: flex;
+    width: 400%;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* TARJETAS INDEX */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.card {
+    flex: 1 1 300px;
+    margin: 50px 0;
+    max-width: 320px;
+    height: 400px;
+    border-bottom-right-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card .contenido {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .contenido h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.card .contenido p {
+    line-height: 1.5;
+    color: #6a6a6a;
+    flex-grow: 1;
+}
+
+.card .contenido a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #9e8f82;
+    border: 1px solid #9e8f82;
+    border-radius: 4px;
+    transition: all 400ms ease;
+}
+
+.card .contenido a:hover {
+    background: #9e8f82;
+    color: #000;
+}
+
+/* CARTAS GASTRONOMIA */
+.card-servicio {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto 60px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.servicio {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+}
+
+.servicio-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.servicio-contenido {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.servicio-titulo {
+    font-size: 18px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.servicio-text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #f2f2f2;
+    padding: 40px 20px 20px;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-logo,
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo p,
+.footer-section p {
+    font-size: 14px;
+    color: #444;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #777;
+}
+
+/* CLIENTES FELICES */
+.clientes-felices {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    font-family: sans-serif;
+    margin-bottom: 50px;
+}
+
+.clientes-felices h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.testimonios {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial h4 {
+    font-size: 16px;
+    color: #9e8f82;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .slider img {
+        height: 500px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .card-servicio {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .testimonios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial {
+        width: 90%;
+    }
+}
+
+/*-------- spa --------*/
+
+/* SPA INTRO */
+.spa-intro {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.spa-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #9e8f82;
+    text-transform: uppercase;
+}
+
+.spa-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* SPA SERVICES */
+.spa-services {
+    padding: 60px 0;
+}
+
+.service-category {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.service-category.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-image {
+    flex: 1;
+}
+
+.service-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.service-description {
+    flex: 1;
+}
+
+.service-description h3 {
+    font-size: 2rem;
+    color: #9e8f82;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.service-description ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.service-description ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #9e8f82;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #7a6d62;
+}
+
+/* SPA BENEFITS */
+.spa-benefits {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.spa-benefits h2 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #9e8f82;
+    text-transform: uppercase;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-item h3 {
+    font-size: 1.5rem;
+    color: #9e8f82;
+    margin-bottom: 20px;
+}
+
+.benefit-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-spa {
+        height: 50vh;
+    }
+    
+    .hero-spa .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .service-category,
+    .service-category.reverse {
+        flex-direction: column;
+    }
+    
+    .service-image img {
+        height: 300px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ------- habitaciones */
+
+/* ESTILOS PARA HABITACIONES */
+
+
+.habitaciones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.habitacion-card {
+    display: flex;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.habitacion-imagen {
+    flex: 1;
+}
+
+.habitacion-imagen img {
+    width: 900px;
+    height: 900px;
+    object-fit: cover;
+    display: block;
+}
+
+.habitacion-info {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.habitacion-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #9e8f82;
+    text-transform: uppercase;
+}
+
+.habitacion-info p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.habitacion-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.habitacion-amenities span {
+    background: #f5f5f5;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.btn-habitacion {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #9e8f82;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.btn-habitacion:hover {
+    background-color: #7a6d62;
+}
+
+.mapa-container {
+    margin-top: 80px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .habitacion-card {
+        flex-direction: column;
+    }
+    
+    .habitacion-imagen {
+        height: 250px;
+    }
+    
+    .habitacion-info {
+        padding: 25px;
+    }
+}
+
+
+/*estilo de la pagina contacto*/
+
+/* imagen + titulo */
+.titulo_contacto {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.titulo_contacto h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f5f3f3;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.titulo_contacto h1 {
+    top: 20%;
+    font-size: 2.5rem;
+    padding: 20px;
+}
+.titulo_contacto img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.titulo_contacto  ul {
+    display: flex;
+    width: 400%;
+}
+
+.titulo_contacto  li {
+    width: 100%;
+    list-style: none;
+}
+
+/* formulario de contacto */
+
+.titulo_h2_contacto {
+    text-align: center;
+    
+    margin-bottom: 1%;
+}
+
+#formulario_contacto {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-message {
+  margin: 30px auto;
+  text-align: center;
+  max-width: 100%;
+}
+
+.form-message textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #222;
+}
+
+.error-text {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    padding-top: 5px;
+    color: #ca0000;
+    text-align: left;
+}
+
+/* pagina de agradecimiento - estilo */
+.mensaje {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+.gracias_body {
+    margin: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+/* footer */
+
+
+/* ================================
+   PAGINA DE RESERVA - CSS COMPLETO
+   ================================ */
+
+/* GENERAL */
+.reservas-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN */
+.reservas-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* FORMULARIO DE BÚSQUEDA (IZQUIERDA) */
+#Disponibilidad_fecha{
+  text-align: center;
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+#reserva_formulario {
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+#reserva_formulario input {
+  width: 80%;
+  height: 40px;
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* CONTENEDOR DE HABITACIONES */
+#rooms {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Cabecera “Habitaciones” */
+#cabecera_habitacion {
+  text-align: center;
+  background-color: #000;
+  color: white;
+  margin-bottom: 1px;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+/* Wrapper de cada habitación */
+.habitacion_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* Imagen de habitación */
+.habitacion_wrapper img {
+  width: 250px;          
+  height: 250px;         
+  object-fit: cover;     
+  border-radius: 8px;  
+  display: block;
+}
+
+/* Columna de detalles (título + amenities) */
+.habitacion_wrapper .col-detalle,
+#habitacion_titulo {
+  flex: 1;
+  position: relative;
+}
+
+/* Título y descripción */
+#habitacion_titulo h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+#habitacion_titulo p {
+  margin: 5px 0 0;
+}
+
+/* Icono “Para 2 personas” / “Para 3 personas” */
+.icono_dos_personas,
+.icono_tres_personas {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.875rem;
+  margin-top: 8px;
+}
+
+.icono_dos_personas img,
+.icono_tres_personas img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Habitación y desayuno */
+.hab_desayuno_title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.875rem;
+  margin-top: 8px;
+}
+
+.hab_desayuno_title img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Lista de amenities */
+.icono_amenities {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.icono_amenities img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Precio + Desayuno + Personas + Habitaciones */
+#habitacion_precio_desayuno {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+#habitacion_precio_desayuno > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#habitacion_precio_desayuno img {
+  width: 24px;
+  height: 24px;
+}
+
+#habitacion_precio_desayuno small {
+  font-size: 0.8em;
+  color: #555;
+}
+
+#habitacion_precio_desayuno p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+/* Etiquetas y selects */
+.cantidad_de_habitaciones,
+.cantidad_de_personas,
+#habitacion_precio_desayuno label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* FORMULARIO DE DATOS PERSONALES */
+#titulo_reserva_formulario{
+  text-align: center;
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+.formulario_datos_personales {
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.formulario_datos_personales h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.formulario_datos_personales label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formulario_datos_personales input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+/* Botón de reserva */
+.boton_reserva {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #006699;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton_reserva:hover {
+  background-color: #004d73;
+}
+
+/* FOOTER RESERVA */
+#footer_reserva {
+  background-color: #9e8f82;
+  padding: 20px;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  /* Contenedor principal: apilar en fila */
+  .reservas-main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Formulario de búsqueda y datos personales ocupan columnas fijas */
+  #reserva_formulario {
+    width: 30%;
+  }
+
+  #rooms {
+    width: 40%;
+  }
+
+  .formulario_datos_personales {
+    width: 30%;
+    margin: 0; 
+  }
+
+  /* Cada habitación: pasar a diseño en fila */
+  .habitacion_wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Alinear el bloque de precio/desayuno al centro vertical */
+  #habitacion_precio_desayuno {
+    align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Mantener filas y repartir espacio */
+  .reservas-main {
+    justify-content: space-between;
+  }
+
+  /* Ajusta ancho para que entren 3 columnas*/
+  #reserva_formulario {
+    width: 25%;
+  }
+
+  #rooms {
+    width: 50%;
+  }
+
+  .formulario_datos_personales {
+    width: 20%;
+    margin: 0; 
+  }
+
+  /* Dentro de cada habitación, ampliar la imagen y detalles un poco */
+  .habitacion_wrapper .col-imagen img,
+  #habitacion_deluxe img,
+  #habitacion_junior img,
+  #habitacion_executive img {
+    max-width: 300px;
+  }
+
+  #habitacion_titulo h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* FIN DE ESTILOS */

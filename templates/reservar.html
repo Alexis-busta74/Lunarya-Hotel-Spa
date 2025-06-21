@@ -4,37 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
     <title>Reservas - Lunarya</title>
   </head>
   <body class="reservas-body">
     <header>
       <nav>
-        <a href="../index.html">
-            <img src="../imagenes/Lunarya.png" alt="Logo hotel" class="logo">
+        <a href="/">
+            <img src="../static/imagenes/Lunarya.png" alt="Logo hotel" class="logo">
         </a>
         <ul class="menu">
-          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="/">Inicio</a></li>
 
           <li class="submenu">
-            <a href="./servicios.html">Servicios</a>
+            <a href="/servicios">Servicios</a>
             <ul>
-              <li><a href="./gastronomia.html">Gastronomía</a></li>
-              <li><a href="./spa.html">Spa</a></li>
+              <li><a href="/gastronomia">Gastronomía</a></li>
+              <li><a href="/spa">Spa</a></li>
             </ul>
           </li>
 
           <li class="submenu">
-            <a href="./habitaciones.html">Habitaciones</a>
+            <a href="/habitaciones">Habitaciones</a>
             <ul>
-              <li><a href="./habitaciones.html">Deluxe</a></li>
-              <li><a href="./habitaciones.html">Junior Suite</a></li>
-              <li><a href="./habitaciones.html">Executive Suite</a></li>
+              <li><a href="/habitaciones">Deluxe</a></li>
+              <li><a href="/habitaciones">Junior Suite</a></li>
+              <li><a href="/habitaciones">Executive Suite</a></li>
             </ul>
           </li>
 
-          <li><a href="./contacto.html">Contacto</a></li>
-          <li><a href="./reservar.html">Reservar</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/reservar">Reservar</a></li>
         </ul>
       </nav>
     </header>
@@ -51,7 +51,7 @@
           <input type="date" id="fechaEgreso" required/><br /><br />
           <div class="error-text" id="fechaErrorEgreso"></div>
         </div>
-        <script src="../valida_reserva.js"></script>
+        <script src="../static/javascript/valida_reserva.js"></script>
       </form>
       <div id="rooms">
         <h2 id="cabecera_habitacion">Habitaciones</h2>
@@ -60,7 +60,7 @@
         <div class="habitacion_wrapper" id="habitacion_deluxe">
           
           <div id="habitacion_deluxe">
-            <img src="../imagenes/habitacion_deluxe.jpg" alt="…" />
+            <img src="../static/imagenes/habitacion_deluxe.jpg" alt="…" />
           </div>
 
          
@@ -68,14 +68,14 @@
             <h3>Deluxe Twin</h3>
             <p>Habitación Moderna - 45 mts</p>
             <ul class="icono_amenities">
-              <li><img src="../iconos/televisor.ico" alt="televisor" /></li>
-              <li><img src="../iconos/wifi.ico" alt="wifi" /></li>
-              <li><img src="../iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
-              <li><img src="../iconos/aire_acondicionado.ico" alt="aire" /></li>
+              <li><img src="../static/iconos/televisor.ico" alt="televisor" /></li>
+              <li><img src="../static/iconos/wifi.ico" alt="wifi" /></li>
+              <li><img src="../static/iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
+              <li><img src="../static/iconos/aire_acondicionado.ico" alt="aire" /></li>
             </ul>
             <div class="icono_dos_personas">
               <p>Para 2 personas.</p>
-              <img src="../iconos/dos_personas.ico" alt="2 personas" />
+              <img src="../static/iconos/dos_personas.ico" alt="2 personas" />
             </div>
             <div class="hab_desayuno_title"><br>
               <p>Habitación y desayuno.</p>
@@ -84,7 +84,7 @@
 
           <div id="habitacion_precio_desayuno">
             <div>
-              <img src="../iconos/informacion.ico" alt="info precio" />
+              <img src="../static/iconos/informacion.ico" alt="info precio" />
               <h4>
                 <small>ARS</small>
                 <p>$80.000</p>
@@ -119,21 +119,21 @@
         <!-- JUNIOR SUITE -->
        <div class="habitacion_wrapper" id="habitacion_junior">
           <div id="habitacion_junior">
-            <img src="../imagenes/junior-suite.jpg" alt="…" />
+            <img src="../static/imagenes/junior-suite.jpg" alt="…" />
           </div>
 
           <div id="habitacion_titulo">
             <h3>Junior Suite</h3>
             <p>Habitación Moderna - 65 mts</p>
             <ul class="icono_amenities">
-              <li><img src="../iconos/televisor.ico" alt="televisor" /></li>
-              <li><img src="../iconos/wifi.ico" alt="wifi" /></li>
-              <li><img src="../iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
-              <li><img src="../iconos/aire_acondicionado.ico" alt="aire" /></li>
+              <li><img src="../static/iconos/televisor.ico" alt="televisor" /></li>
+              <li><img src="../static/iconos/wifi.ico" alt="wifi" /></li>
+              <li><img src="../static/iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
+              <li><img src="../static/iconos/aire_acondicionado.ico" alt="aire" /></li>
             </ul>
             <div class="icono_tres_personas">
               <p>Para 3 personas.</p>
-              <img src="../iconos/icono_3_persona.ico" alt="3 personas" />
+              <img src="../static/iconos/icono_3_persona.ico" alt="3 personas" />
             </div>
              <div class="hab_desayuno_title"><br>
               <p>Habitación y desayuno.</p>
@@ -142,7 +142,7 @@
 
           <div id="habitacion_precio_desayuno">
             <div>
-               <img src="../iconos/informacion.ico" alt="info precio" />
+               <img src="../static/iconos/informacion.ico" alt="info precio" />
               <h4>
                 <small>ARS</small>
                 <p>$90.000</p>
@@ -176,21 +176,21 @@
         <!-- EXECUTIVE SUITE -->
         <div class="habitacion_wrapper" id="habitacion_executive">
           <div id="habitacion_executive">
-            <img src="../imagenes/executive-suite.jpg" alt="…" />
+            <img src="../static/imagenes/executive-suite.jpg" alt="…" />
           </div>
 
           <div id="habitacion_titulo">
             <h3>Executive Suite</h3>
             <p>Habitación Moderna - 85 mts</p>
             <ul class="icono_amenities">
-              <li><img src="../iconos/televisor.ico" alt="televisor" /></li>
-              <li><img src="../iconos/wifi.ico" alt="wifi" /></li>
-              <li><img src="../iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
-              <li><img src="../iconos/aire_acondicionado.ico" alt="aire" /></li>
+              <li><img src="../static/iconos/televisor.ico" alt="televisor" /></li>
+              <li><img src="../static/iconos/wifi.ico" alt="wifi" /></li>
+              <li><img src="../static/iconos/caja_fuerte.ico" alt="caja fuerte" /></li>
+              <li><img src="../static/iconos/aire_acondicionado.ico" alt="aire" /></li>
             </ul>
             <div class="icono_dos_personas">
               <p>Para 3 personas.</p>
-              <img src="../iconos/icono_3_persona.ico" alt="3 personas" />
+              <img src="../static/iconos/icono_3_persona.ico" alt="3 personas" />
             </div>
               <div class="hab_desayuno_title"><br>
               <p>Habitación y desayuno.</p>
@@ -199,7 +199,7 @@
 
           <div id="habitacion_precio_desayuno">
             <div>
-              <img src="../iconos/informacion.ico" alt="info precio" />
+              <img src="../static/iconos/informacion.ico" alt="info precio" />
               <h4>
                 <small>ARS</small>
                 <p>$110.000</p>
@@ -265,7 +265,7 @@
     <footer class="footer" id="footer_reserva">
       <div class="footer-container">
         <div class="footer-section">
-          <img src="../imagenes/Lunarya.png" alt="Lunarya" width="250" />
+          <img src="../static/imagenes/Lunarya.png" alt="Lunarya" width="250" />
           <p>LUNARYA · SPA & HOTEL</p>
         </div>
         <div class="footer-section">

@@ -4,44 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
     <title>Contacto - Lunarya</title>
   </head>
   <body>
     <header>
       <nav>
-        <a href="../index.html">
-            <img src="../imagenes/Lunarya.png" alt="Logo hotel" class="logo">
+        <a href="/">
+            <img src="../static/imagenes/Lunarya.png" alt="Logo hotel" class="logo">
         </a>
         <ul class="menu">
-          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="/">Inicio</a></li>
 
           <li class="submenu">
-            <a href="./servicios.html">Servicios</a>
+            <a href="/servicios">Servicios</a>
             <ul>
-              <li><a href="./gastronomia.html">Gastronomía</a></li>
-              <li><a href="./spa.html">Spa</a></li>
+              <li><a href="/gastronomia">Gastronomía</a></li>
+              <li><a href="/spa">Spa</a></li>
             </ul>
           </li>
 
           <li class="submenu">
-            <a href="./habitaciones.html">Habitaciones</a>
+            <a href="/habitaciones">Habitaciones</a>
             <ul>
-              <li><a href="./habitaciones.html">Deluxe</a></li>
-              <li><a href="./habitaciones.html">Junior Suite</a></li>
-              <li><a href="./habitaciones.html">Executive Suite</a></li>
+              <li><a href="/habitaciones">Deluxe</a></li>
+              <li><a href="/habitaciones">Junior Suite</a></li>
+              <li><a href="/habitaciones">Executive Suite</a></li>
             </ul>
           </li>
 
-          <li><a href="./contacto.html">Contacto</a></li>
-          <li><a href="./reservar.html">Reservar</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/reservar">Reservar</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <div class="titulo_contacto">
         <h1>Vení a vivir una experiencia única de sabor y relajación.<br /></h1>
-        <img src="../imagenes/Reception.jpg" alt="imagen de recepcion" />
+        <img src="../static/imagenes/Reception.jpg" alt="imagen de recepcion" />
       </div>
       <section>
         <h2 class="titulo_h2_contacto">
@@ -69,7 +69,7 @@
               </div>
               <div class="form-group">
                 <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" />
+                <input type="tel" id="telefono" name="telefono" required/>
                 <div class="error-text" id="telefonoError"></div>
               </div>
             </div>
@@ -88,7 +88,7 @@
               <button type="submit" id="boton">Enviar mensaje</button>
             </div>
           <!-- CIERRE DEL FORMULARIO -->
-          <script src="../valida_formulario.js"></script>
+          <script src="../static/javascript/valida_formulario.js"></script>
           </form>
         </fieldset>
       </section>
@@ -112,7 +112,7 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-section">
-          <img src="../imagenes/Lunarya.png" alt="Lunarya" width="250" />
+          <img src="../static/imagenes/Lunarya.png" alt="Lunarya" width="250" />
           <p>LUNARYA · SPA & HOTEL</p>
         </div>
         <div class="footer-section">
