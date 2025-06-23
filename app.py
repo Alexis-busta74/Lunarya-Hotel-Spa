@@ -50,6 +50,14 @@ def inicio():
 def servicios():
     return render_template('servicios.html')
 
+@app.route('/gastronomia')
+def gastronomia():
+    return render_template('gastronomia.html')
+
+@app.route('/spa')
+def spa():
+    return render_template('spa.html')
+
 @app.route('/habitaciones')
 def habitaciones():
     return render_template('habitaciones.html')
