@@ -231,20 +231,21 @@ nav {
 
 /* FOOTER */
 .footer {
-    background-color: #f2f2f2;
+    background-color: #9e8f82;
     padding: 40px 20px 20px;
     font-family: sans-serif;
 }
 
+
 .footer-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
+    padding-left: 40px;
     align-items: flex-start;
-    gap: 40px;
+    gap: 60px;
 }
+
 
 .footer-logo,
 .footer-section {
@@ -543,7 +544,6 @@ nav {
 
 /* ESTILOS PARA HABITACIONES */
 
-
 .habitaciones-container {
     display: flex;
     flex-direction: column;
@@ -644,51 +644,10 @@ nav {
 }
 
 
-/*estilo de la pagina contacto*/
-
-/* imagen + titulo */
-.titulo_contacto {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.titulo_contacto h1 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #f5f3f3;
-    text-align: center;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    max-width: 90%;
-}
-
-.titulo_contacto h1 {
-    top: 20%;
-    font-size: 2.5rem;
-    padding: 20px;
-}
-.titulo_contacto img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-}
-.titulo_contacto  ul {
-    display: flex;
-    width: 400%;
-}
-
-.titulo_contacto  li {
-    width: 100%;
-    list-style: none;
-}
-
 /* formulario de contacto */
-
 .titulo_h2_contacto {
     text-align: center;
-    
+    padding: 10px;
     margin-bottom: 1%;
 }
 
@@ -779,11 +738,10 @@ button[type="submit"]:hover {
     font-family: sans-serif;
 }
 
-/* footer */
 
 
 /* ================================
-   PAGINA DE RESERVA - CSS COMPLETO
+  PAGINA DE RESERVA - CSS COMPLETO
    ================================ */
 
 /* GENERAL */
@@ -1028,12 +986,6 @@ select {
   background-color: #004d73;
 }
 
-/* FOOTER RESERVA */
-#footer_reserva {
-  background-color: #9e8f82;
-  padding: 20px;
-  color: white;
-}
 
 @media (min-width: 768px) {
   /* Contenedor principal: apilar en fila */
