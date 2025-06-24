@@ -47,10 +47,6 @@ nav {
     z-index: 1000;
 }
 
-.menu li ul li a {
-    padding: 10px;
-}
-
 .submenu:hover ul {
     display: block;
 }
@@ -512,39 +508,45 @@ nav {
 }
 
 .habitacion-info {
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 600px;
+  margin: auto;
+  color: #333;
 }
 
 .habitacion-info h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #9e8f82;
-    text-transform: uppercase;
+  color: #0077b6;
+  margin-bottom: 12px;
+  font-size: 28px;
+  text-decoration: underline; 
 }
 
+
 .habitacion-info p {
-    margin-bottom: 30px;
-    line-height: 1.6;
-    color: #666;
+  margin: 4px 0;
+  line-height: 1.5;
 }
 
 .habitacion-amenities {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .habitacion-amenities span {
-    background: #f5f5f5;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: #555;
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
+
 
 .btn-habitacion {
     display: inline-block;
@@ -558,7 +560,7 @@ nav {
     letter-spacing: 1px;
     font-weight: bold;
     align-self: flex-start;
-    margin-top: auto;
+    margin-top: 20px;
 }
 
 .btn-habitacion:hover {
