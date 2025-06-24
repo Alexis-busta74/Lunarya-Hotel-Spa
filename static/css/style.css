@@ -244,6 +244,26 @@ nav {
     padding-left: 40px;
     align-items: flex-start;
     gap: 60px;
+    position: relative; 
+}
+.footer-login {
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.footer-login a {
+    display: block;
+    color: #444;
+    text-decoration: none;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.footer-login a:hover {
+    text-decoration: underline;
 }
 
 

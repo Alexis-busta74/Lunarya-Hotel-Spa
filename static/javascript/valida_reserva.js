@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('form_datos_reserva');
   const boton = document.getElementById('boton_reserva');
@@ -217,6 +218,5 @@ function validarHabitaciones() {
     alert("Debe seleccionar personas y habitaciones en al menos una de las opciones disponibles.");
     return false;
   }
-
   return true;
 }

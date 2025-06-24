@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Reservas</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="./"><img src="../static/imagenes/Lunarya.png" alt="Logo" class="logo" /></a>
+      <ul class="menu">
+        <li><a href="/login">inicio</a></li>
+        <li><a href="/admin_reserva">admin_reserva</a></li>
+        <li><a href="/modi_precio">modi_precio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Reservas Registradas</h1>
+    <table id="tabla_reservas">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Ingreso</th>
+          <th>Egreso</th>
+          <th>Habitaciones</th>
+          <th>Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Datos dinámicos -->
+      </tbody>
+    </table>
+  </main>
+
+  <script>
+  function formatearHabitaciones(habitacionesStr) {
+  try {
+    const habitaciones = JSON.parse(habitacionesStr);
+    let resultado = [];
+    for (const tipo in habitaciones) {
+      const cant = habitaciones[tipo].habitaciones || "0";
+      const pers = habitaciones[tipo].personas || "0";
+      if (parseInt(cant) > 0) {
+        resultado.push(`${tipo} (${cant} hab., ${pers} pers.)`);
+      }
+    }
+    return resultado.join("; ");
+  } catch {
+    return "No disponible";
+  }
+}
+
+  fetch('/api/reservas')
+    .then(response => response.json())
+    .then(data => {
+      const tbody = document.querySelector('#tabla_reservas tbody');
+      tbody.innerHTML = "";  // Limpiar tabla antes
+      data.forEach(reserva => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+          <td>${reserva.nombre}</td>
+          <td>${reserva.apellido}</td>
+          <td>${reserva.email}</td>
+          <td>${reserva.telefono || ''}</td>
+          <td>${reserva.fecha_ingreso}</td>
+          <td>${reserva.fecha_egreso}</td>
+          <td>${formatearHabitaciones(reserva.habitaciones)}</td>
+          <td><button onclick="cancelarReserva(${reserva.id})">Cancelar</button></td>
+        `;
+        tbody.appendChild(fila);
+      });
+    });
+
+  function cancelarReserva(id) {
+    if (!confirm("¿Seguro que deseas cancelar esta reserva?")) return;
+    fetch(`/api/reservas/${id}`, { method: 'DELETE' })
+      .then(res => res.json())
+      .then(data => {
+        alert(data.mensaje);
+        location.reload();
+      });
+  }
+</script>
+
+  </script>
+</body>
+</html>

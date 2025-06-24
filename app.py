@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 import sqlite3
 import os
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -78,10 +79,34 @@ def reservar():
 def mensaje_reservar():
     return render_template('mensaje_reserva.html')
 
+@app.route('/admin_reserva')
+def admin_reserva():
+    return render_template('admin_reserva.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
+@app.route('/modi_precio')
+def modi_precio():
+    return render_template('modi_precio.html')
 
-    
+# API para recibir datos del login.HTML
+
+@app.route('/api/login', methods=['POST'])
+def api_login():
+    data = request.get_json()
+    username = data.get('username', '').strip()
+    password = data.get('password', '').strip()
+
+    # Usuario y clave fijos
+    if username == 'ADMINISTRADOR' and password == 'ADMIN123':
+        # Login correcto
+        return jsonify({'mensaje': 'Login exitoso'}), 200
+    else:
+        return jsonify({'error': 'Usuario o clave incorrectos'}), 401
+
+   
 # API para recibir datos del formulario CONTACTO.HTML
 @app.route('/api/contacto', methods=['POST'])
 def guardar_contacto():
@@ -106,7 +131,7 @@ def guardar_contacto():
 
     return jsonify({'mensaje': 'Contacto guardado correctamente'}), 200
 
-# API para recibir datos del formulario RESRVAR.HTML
+# API para recibir datos del formulario RESERVAR.HTML 
 
 @app.route('/api/reserva', methods=['POST'])
 def guardar_reserva():
@@ -118,21 +143,61 @@ def guardar_reserva():
     telefono = data.get('telefono')
     fecha_ingreso = data.get('fecha_ingreso')
     fecha_egreso = data.get('fecha_egreso')
-    habitaciones = data.get('habitaciones')  # será un string JSON con los datos
+    personas = data.get('personas', 1)
+    habitaciones = data.get('habitaciones', {})
 
     if not (nombre and apellido and email and fecha_ingreso and fecha_egreso and habitaciones):
         return jsonify({'error': 'Faltan datos obligatorios'}), 400
+
+
+    # Si habitaciones llega como dict, guardamos como JSON string
+    if isinstance(habitaciones, dict):
+        habitaciones_str = json.dumps(habitaciones)
+    else:
+        habitaciones_str = habitaciones  # asumiendo string
 
     with sqlite3.connect(DB_NAME) as conn:
         cursor = conn.cursor()
         cursor.execute('''
             INSERT INTO reserva (nombre, apellido, email, telefono, fecha_ingreso, fecha_egreso, habitaciones)
             VALUES (?, ?, ?, ?, ?, ?, ?)
-        ''', (nombre, apellido, email, telefono, fecha_ingreso, fecha_egreso, habitaciones))
+        ''', (nombre, apellido, email, telefono, fecha_ingreso, fecha_egreso, habitaciones_str))
         conn.commit()
 
     return jsonify({'mensaje': 'Reserva guardada correctamente'}), 200
 
+# API para MOSTRAR  datos del formulario RESERVAR.HTML 
+@app.route('/api/reservas', methods=['GET'])
+def obtener_reservas():
+    with sqlite3.connect(DB_NAME) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT id, nombre, apellido, email, telefono, fecha_ingreso, fecha_egreso, habitaciones FROM reserva
+        """)
+        rows = cursor.fetchall()
+        reservas = []
+        for row in rows:
+            reservas.append({
+                'id': row[0],
+                'nombre': row[1],
+                'apellido': row[2],
+                'email': row[3],
+                'telefono': row[4],
+                'fecha_ingreso': row[5],
+                'fecha_egreso': row[6],
+                'habitaciones': row[7]  # cadena JSON
+            })
+    return jsonify(reservas)
+
+# cancelar reserva
+
+@app.route('/api/reservas/<int:reserva_id>', methods=['DELETE'])
+def cancelar_reserva(reserva_id):
+    with sqlite3.connect(DB_NAME) as conn:
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM reserva WHERE id = ?", (reserva_id,))
+        conn.commit()
+    return jsonify({'mensaje': 'Reserva cancelada exitosamente'}), 200
 
 # Iniciar servidor
 if __name__ == '__main__':
