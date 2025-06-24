@@ -67,7 +67,8 @@
                         <li>Terapias corporales</li>
                         <li>Rituales de bienestar</li>
                     </ul>
-                    <a href="../PDF/servicio_spa.pdf" class="btn" download="./servicio_spa.pdf">Ver tratamientos</a>
+                    <a href="{{ url_for('static', filename='PDF/servicio_spa.pdf') }}" class="btn" download>Ver tratamientos</a>
+
                 </div>
             </div>
 
@@ -112,7 +113,7 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-section">
-          <img src="../static/imagenes/Lunarya.png" alt="Lunarya" width="250" />
+          <img src="../static/imagenes/Lunarya.png" alt="Lunarya" width="100" />
           <p>LUNARYA · SPA & HOTEL</p>
         </div>
         <div class="footer-section">
@@ -127,7 +128,7 @@
         </div>
         <div class="footer-section">
           <h4>RED SOCIAL</h4>
-          <p>@Lunaryahotek</p>
+          <p>@Lunaryahotel</p>
         </div>
       </div>
     </footer>

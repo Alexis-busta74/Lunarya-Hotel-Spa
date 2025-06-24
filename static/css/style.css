@@ -54,6 +54,11 @@ nav {
 .submenu:hover ul {
     display: block;
 }
+.menu li ul li a:hover {
+    background-color: #c8a96b;
+    color: white; 
+}
+
 
 /* SLIDER */
 .slider {

@@ -90,7 +90,7 @@ function validarnombre() {
   const error_texto = document.getElementById('nombreError');
 
   if (nombre === '') {
-    error_texto.textContent = '❌ El campo no puede estar vacío.';
+    error_texto.textContent = '❌ Por favor, ingresá tu nombre.';
     return false;
   } else if (!/^[a-zA-Z-áéíóúÁÉÍÓÚ\s]+$/.test(nombre)) {
     error_texto.textContent = '❌ Solo se permiten letras y espacios.';
@@ -108,7 +108,7 @@ function validarapellido(){
     const error_texto = document.getElementById('apellidoError');
 
     if (apellido === '') {
-        error_texto.textContent = '❌ El campo no puede estar vacío.';
+        error_texto.textContent = '❌ Por favor, ingresá tu apellido.';
         return false;
     } else if (!/^[a-zA-Z-áéíóúÁÉÍÓÚ\s]+$/.test(apellido)) {
         error_texto.textContent = '❌ Solo se permiten letras y espacios.';
@@ -127,7 +127,7 @@ function validarmail(){
     const error = document.getElementById('emailError');
 
     if (mail === '') {
-        error.textContent = '❌ El campo no puede estar vacío';
+        error.textContent = '❌ Ingresa un correo (ej: nombre@correo.com).';
         return false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) {
         error.textContent = '❌ Formato no válido. Ej: nombre@dominio.com';
@@ -142,7 +142,7 @@ function validatelefono() {
     const error = document.getElementById('telefonoError');
 
     if (!/^[0-9]+$/.test(telefono)) {
-        error.textContent = '❌ Solo se permiten números.';
+        error.textContent = '❌  Ingresa solo numeros, sin espacios.';
         return false;
     } else if (telefono.length < 10 || telefono.length > 15) {
         error.textContent = '❌ Número inválido. Mínimo 10 dígitos, máximo 15.';
