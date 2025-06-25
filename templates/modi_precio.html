@@ -72,6 +72,50 @@
     <p id="msg" class="success-message"></p>
   </form>
 
-  
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Obtener precios actuales
+    fetch("/api/precios")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("precio_deluxe").value = data["Deluxe Twin"];
+        document.getElementById("precio_junior").value = data["Junior Suite"];
+        document.getElementById("precio_executive").value = data["Executive Suite"];
+      })
+      .catch(err => console.error("Error al cargar precios:", err));
+
+    // Guardar nuevos precios
+    document.getElementById("precioForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nuevosPrecios = {
+        "Deluxe Twin": parseInt(document.getElementById("precio_deluxe").value),
+        "Junior Suite": parseInt(document.getElementById("precio_junior").value),
+        "Executive Suite": parseInt(document.getElementById("precio_executive").value)
+      };
+
+      fetch("/api/precios", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(nuevosPrecios)
+      })
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("msg").textContent = data.mensaje;
+
+          // Redireccionar después de guardar
+          setTimeout(() => {
+            window.location.href = "/admin_reserva";
+          }, 1000); // Espera 1 segundo para mostrar el mensaje antes de redirigir
+        })
+        .catch(err => {
+          console.error("Error al actualizar precios:", err);
+        });
+    });
+  });
+</script>
+
 </body>
 </html>

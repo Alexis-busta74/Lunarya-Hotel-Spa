@@ -38,7 +38,26 @@ def crear_base_datos():
             )
         ''')
         conn.commit()
+        
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS precios (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            tipo_habitacion TEXT UNIQUE NOT NULL,
+            precio INTEGER NOT NULL
+            )
+        ''')
 
+        cursor.execute("SELECT COUNT(*) FROM precios")
+        if cursor.fetchone()[0] == 0:
+            cursor.executemany('''
+            INSERT INTO precios (tipo_habitacion, precio)
+            VALUES (?, ?)
+        ''', [
+               ('Deluxe Twin', 80000),
+               ('Junior Suite', 120000),
+               ('Executive Suite', 160000)
+        ])
+        conn.commit()
 
 crear_base_datos()
 
@@ -91,6 +110,28 @@ def login():
 def modi_precio():
     return render_template('modi_precio.html')
 
+#api para OBTENER los precios de reservar.html
+
+@app.route('/api/precios', methods=['GET'])
+def obtener_precios():
+    with sqlite3.connect(DB_NAME) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT tipo_habitacion, precio FROM precios")
+        precios = {tipo: precio for tipo, precio in cursor.fetchall()}
+    return jsonify(precios)
+
+#api para MODIFICAR los precios de reservar.html - se modifica desde MODI_PRECIO.HTML
+@app.route('/api/precios', methods=['POST'])
+def actualizar_precios():
+    data = request.json
+    with sqlite3.connect(DB_NAME) as conn:
+        cursor = conn.cursor()
+        for tipo, precio in data.items():
+            cursor.execute("UPDATE precios SET precio = ? WHERE tipo_habitacion = ?", (precio, tipo))
+        conn.commit()
+    return jsonify({"mensaje": "Precios actualizados correctamente"}), 200
+
+
 # API para recibir datos del login.HTML
 
 @app.route('/api/login', methods=['POST'])
@@ -105,6 +146,7 @@ def api_login():
         return jsonify({'mensaje': 'Login exitoso'}), 200
     else:
         return jsonify({'error': 'Usuario o clave incorrectos'}), 401
+
 
    
 # API para recibir datos del formulario CONTACTO.HTML
@@ -198,6 +240,7 @@ def cancelar_reserva(reserva_id):
         cursor.execute("DELETE FROM reserva WHERE id = ?", (reserva_id,))
         conn.commit()
     return jsonify({'mensaje': 'Reserva cancelada exitosamente'}), 200
+
 
 # Iniciar servidor
 if __name__ == '__main__':

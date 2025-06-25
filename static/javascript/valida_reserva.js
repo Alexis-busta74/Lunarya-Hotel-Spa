@@ -220,3 +220,19 @@ function validarHabitaciones() {
   }
   return true;
 }
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("/api/precios")
+    .then((res) => res.json())
+    .then((data) => {
+      if (data["Deluxe Twin"]) {
+        document.querySelector("#habitacion_deluxe h4 p").textContent = `$${data["Deluxe Twin"].toLocaleString("es-AR")}`;
+      }
+      if (data["Junior Suite"]) {
+        document.querySelector("#habitacion_junior h4 p").textContent = `$${data["Junior Suite"].toLocaleString("es-AR")}`;
+      }
+      if (data["Executive Suite"]) {
+        document.querySelector("#habitacion_executive h4 p").textContent = `$${data["Executive Suite"].toLocaleString("es-AR")}`;
+      }
+    })
+    .catch((err) => console.error("Error al cargar precios:", err));
+});
