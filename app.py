@@ -110,6 +110,10 @@ def login():
 def modi_precio():
     return render_template('modi_precio.html')
 
+@app.route('/admin_contacto')
+def admin_contacto():
+    return render_template('admin_contacto.html')
+
 #api para OBTENER los precios de reservar.html
 
 @app.route('/api/precios', methods=['GET'])
@@ -149,7 +153,7 @@ def api_login():
 
 
    
-# API para recibir datos del formulario CONTACTO.HTML
+# API para OBTENER datos del formulario CONTACTO.HTML
 @app.route('/api/contacto', methods=['POST'])
 def guardar_contacto():
     data = request.get_json()
@@ -172,6 +176,24 @@ def guardar_contacto():
         conn.commit()
 
     return jsonify({'mensaje': 'Contacto guardado correctamente'}), 200
+
+# API para MOSTRAR datos del formulario CONTACTO.HTML - se visualiza desde admin_contacto.html
+@app.route('/api/contactos', methods=['GET'])
+def obtener_contactos():
+    with sqlite3.connect(DB_NAME) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT nombre, apellido, email, telefono, mensaje FROM contacto")
+        contactos = [
+            {
+                'nombre': row[0],
+                'apellido': row[1],
+                'email': row[2],
+                'telefono': row[3],
+                'mensaje': row[4]
+            }
+            for row in cursor.fetchall()
+        ]
+    return jsonify(contactos)
 
 # API para recibir datos del formulario RESERVAR.HTML 
 
@@ -240,7 +262,6 @@ def cancelar_reserva(reserva_id):
         cursor.execute("DELETE FROM reserva WHERE id = ?", (reserva_id,))
         conn.commit()
     return jsonify({'mensaje': 'Reserva cancelada exitosamente'}), 200
-
 
 # Iniciar servidor
 if __name__ == '__main__':
