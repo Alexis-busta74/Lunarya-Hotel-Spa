@@ -21,7 +21,7 @@ function validarnombre(){
     const nombre = document.getElementById('nombre').value.trim();
     const error_texto = document.getElementById('nombreError');
     if (nombre === ''){
-        error_texto.textContent = '❌ El campo no puede estar vacío. ';
+        error_texto.textContent = '❌ Nombre: Ej. Roberto ';
         return false;
     } else if (!/^[a-zA-Z-áéíóúÁÉÍÓÚ\s]+$/.test(nombre)){
         error_texto.textContent = '❌ Solo se permiten letras y espacios.';
@@ -39,7 +39,7 @@ function validarapellido() {
     const error_texto = document.getElementById('apellidoError');
 
     if (apellido === '') {
-        error_texto.textContent = '❌ El campo no puede estar vacío.';
+        error_texto.textContent = '❌ Apellido: Ej. Gómez';
         return false;
     } else if (!/^[a-zA-Z-áéíóúÁÉÍÓÚ\s]+$/.test(apellido)) {
         error_texto.textContent = '❌ Solo se permiten letras y espacios.';
@@ -57,14 +57,14 @@ function validarmail(){
     const error = document.getElementById('emailError');
 
     if (mail === ''){
-        error.textContent = '❌ El campo no puede estar vacío';
-         return false;
+        error.textContent = '❌ Correo electrónico: Ej. lunarya@gmail.com';
+        return false;
     } else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){
         error.textContent = '❌ Formato no válido. Ej: nombre@dominio.com';
         return false;
     } else {
         error.textContent = '✅';
-       return true;
+    return true;
     }
 }
 
@@ -73,7 +73,7 @@ function validatelefono() {
     const error = document.getElementById('telefonoError');
 
     if (telefono === '') {
-        error.textContent = '❌ El campo no puede estar vacío.';
+        error.textContent = '❌ Teléfono: Ej. 3412345678.';
         return false;
     } else if (!/^[0-9]+$/.test(telefono)) {
         error.textContent = '❌ Solo se permiten números.';
@@ -92,7 +92,7 @@ function validamensajetexto(){
     const error = document.getElementById('mensajeError');
 
     if(mensaje.length < 20) {
-        error.textContent = '❌ El mensaje debe tener al menos 20 caracteres.';
+        error.textContent = '❌ Mensaje: Ej. Quisiera recibir más información sobre sus servicios.';
         return false;
     } else if(mensaje.length > 300){
         error.textContent = '❌ Llego al maximo de caracteres.';
